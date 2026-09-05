@@ -1,11 +1,12 @@
 <?php
-$host = '127.0.0.1';
-$db   = 'studytrack_db';
-$user = 'root';
-$pass = '';
+$host = getenv('MYSQLHOST') ?: '127.0.0.1';
+$db   = getenv('MYSQLDATABASE') ?: 'studytrack_db';
+$user = getenv('MYSQLUSER') ?: 'root';
+$pass = getenv('MYSQLPASSWORD') ?: '';
+$port = getenv('MYSQLPORT') ?: '3306';
 $charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+$dsn = "mysql:host=$host;port=$port;dbname=$db;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
