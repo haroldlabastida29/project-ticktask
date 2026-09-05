@@ -1,8 +1,6 @@
-[phases.build]
-cmds = []
-
 [phases.setup]
-nixPkgs = ["php", "phpPackages.composer", "phpExtensions.pdo_mysql", "phpExtensions.mysqli"]
+nixPkgs = ["php", "phpPackages.composer"]
+phpExtensions = ["pdo_mysql", "mysqli", "mbstring", "openssl", "curl"]
 
 [start]
 cmd = "php -S 0.0.0.0:$PORT"
