@@ -1,0 +1,7 @@
+{
+    "name": "ticktask/app",
+    "description": "TickTask PHP Application",
+    "require": {
+        "php": ">=8.0"
+    }
+}
